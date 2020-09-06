@@ -1,4 +1,5 @@
 html {
+  /* scales pixel size measurement; 10px==1rem */
   font-size: 62.5%;
   box-sizing: border-box;
 }
@@ -18,7 +19,7 @@ body {
   height: 100%;
   background-color: #eee;
   position: fixed;
-
+  /* flexbox */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -51,7 +52,7 @@ body {
   list-style: none;
   padding: 0;
   height: 25rem;
-
+  /* flexbox */
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -89,6 +90,7 @@ body {
     url(../img/nav-bg.jpeg) center no-repeat;
   background-size: cover;
 
+  /* flexbox */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -111,7 +113,7 @@ body {
 .navigation-search-input {
     width: 30rem;
     padding: 1rem 2rem;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.6rem;
     color: #deaa86;
@@ -123,7 +125,7 @@ body {
 }
 
 .navigation-search-input:focus {
-    background-color: rgba(0,0,0,0.1); 
+    background-color: rgba(0, 0, 0, 0.1); 
 }
 
 .navigation-search-btn {
@@ -131,11 +133,11 @@ body {
     background-color: transparent;
     color: #deaa86;
     font-size: 1.7rem;
+    cursor: pointer;
+    /* button is using position relative to .navigation-search */
     position: absolute;
-    /* using position relative to .navigation-search */
     top: 1rem;
     right: 1rem;
-    cursor: pointer;
 }
 
 .navigation-search-btn:focus {
