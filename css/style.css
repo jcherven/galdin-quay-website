@@ -259,6 +259,7 @@ body {
 }
 
 .brand {
+  /* using this flexbox container prop by itself will unstack the logo and brand text, making them set horizontally */
   display: flex;
   cursor: pointer;
 }
@@ -287,15 +288,18 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 7rem;
   font-weight: 400;
-  /* This zeroes out the default margin of the h1 */
+  /* This zeroes out the default margin of the h1, reducing whitespace */
   margin-bottom: 0;
+  /* animation on page load */
   animation: anim 2s;
 }
 
 .banner-paragraph {
   font-size: 3rem;
   font-weight: 300;
-  /* the value 'backwards' fixes the animation delay */
+  /* animation values are /animation-name/duration/delay/options/ */
+  /* the animation is defined below in @keyframes */
+  /* the value 'backwards' fixes the delay in animation triggering on page load. I don't know why. */
   animation: anim 1.5s .5s backwards;
 }
 
@@ -313,6 +317,7 @@ body {
   animation: anim 1s 1s backwards;
 }
 
+/* this looks pretty bad */
 .banner-button:hover {
   background: linear-gradient(to left, gold, goldenrod);
 }
@@ -325,7 +330,6 @@ body {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
