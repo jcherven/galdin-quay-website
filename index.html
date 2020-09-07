@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- {{{ -->
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="shortcut icon" href="./img/crown.png" />
@@ -16,19 +17,27 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-
-    <title>Grand Hotel</title>
+    <!-- }}} -->
+    <title>Galdin Quay</title>
   </head>
   <body>
-    <!-- navbar -->
+  <!-- navbar {{{ -->
     <div class="navbar">
-      <!-- sidebar -->
+
+      <!-- Click handler to show/hide sidebar nav in pure HTML/CSS -->
+      <!-- This uses a hidden checkbox and label around sidebar -->
+      <input id="click" class="checkbox" type="checkbox" hidden>
+
+      <!-- sidebar {{{ -->
       <div class="sidebar">
-        <div class="menu-icon">
-          <div class="line line-1"></div>
-          <div class="line line-2"></div>
-          <div class="line line-3"></div>
-        </div>
+        <!-- Click handler wrapper -->
+        <label for="click">
+          <div class="menu-icon">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+          </div>
+        </label>
 
         <ul class="social-icons-list">
           <li>
@@ -53,11 +62,11 @@
           <p>2018</p>
         </div>
       </div>
-      <!-- end of sidebar -->
-      <!-- navigation -->
+      <!-- end of sidebar }}} -->
+        <!-- navigation {{{ -->
       <div class="navigation">
         <div class="navigation-header">
-          <h1 class="navigation-heading">Grand Hotel</h1>
+          <h1 class="navigation-heading">Galdin Quay</h1>
           <form class="navigation-search" action="">
             <input
               class="navigation-search-input"
@@ -91,11 +100,13 @@
         </ul>
 
         <div class="copyright">
-          <p>&copy; 2018 Grand Hotel. All Rights Reserved.</p>
+          <p>&copy; 2018 Galdin Quay. All Rights Reserved.</p>
         </div>
       </div>
-      <!-- end of navigation -->
+      <!-- end of navigation }}} -->
     </div>
-    <!-- end of navbar -->
+    <!-- end of navbar }}} -->
+
+
   </body>
 </html>

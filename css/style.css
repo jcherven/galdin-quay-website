@@ -1,5 +1,6 @@
+/* Common Styles {{{  */
 html {
-  /* scales pixel size measurement; 10px==1rem */
+  /* scales rem size measurement; 10px==1rem */
   font-size: 62.5%;
   box-sizing: border-box;
 }
@@ -9,11 +10,9 @@ body {
   padding: 0;
   font-family: "Montserrat", sans-serif;
 }
+/* end of common styles }}} */
 
-/* end of common styles */
-
-/* navbar */
-/* sidebar */
+/* sidebar {{{ */
 .sidebar {
   width: 8rem;
   height: 100%;
@@ -24,29 +23,46 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  /* this z-index sets the hidden nav behind the sidebar */
+  z-index: 10;
 }
 
+/* Custom menu button icon {{{ */ 
 .menu-icon {
   margin-top: 3rem;
   cursor: pointer;
 }
-
 .line {
   height: 0.2rem;
   width: 2.5rem;
   background-color: #222;
   margin-bottom: 0.6rem;
 }
-
+/* Animates the menu button states */
+/* shorten the top and bottom lines */
 .line-1,
 .line-3 {
   width: 1.8rem;
-  transition: width 0.3s;
+  transition: all 0.3s;
 }
 
+/* While nav is active, the hamburger menu is transformed into a "X" */
+.checkbox:checked ~ .sidebar .line-1 {
+  transform: rotate(-405deg) translate(-5px, 6px);
+  width: 2.5rem;
+}
+.checkbox:checked ~ .sidebar .line-2 {
+  opacity: 0;
+}
+.checkbox:checked ~ .sidebar .line-3 {
+  transform: rotate(405deg) translate(-5px, -6px);
+  width: 2.5rem;
+}
+/* on mouse hover, the icon changes a bit */
 .menu-icon:hover .line {
   width: 2.5rem;
 }
+/* }}} */
 
 .social-icons-list {
   list-style: none;
@@ -74,12 +90,12 @@ body {
   font-size: 1.5rem;
   color: #555;
 }
-/* end of sidebar */
+/* end of sidebar }}} */
 
-/* navigation */
+/* navigation {{{ */
 .navigation {
-  margin-left: 8rem;
   position: fixed;
+  left: -32rem;
   width: 40rem;
   height: 100%;
   background: linear-gradient(
@@ -95,56 +111,75 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  /* animation for show/hide nav menu on click*/
+  transition: left 0.4s cubic-bezier(1,0,0,1);
+}
+
+/* Click handler for the main nav {{{ */
+/* The tilde css combinator is the general sibling selector. */
+/* It should select all sibling elements */
+.checkbox:checked ~ .navigation {
+  left: 8rem; 
 }
 
 .navigation-heading {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 300;
-    letter-spacing:0.2rem;
-    color: #deaa86;
-    text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing:0.2rem;
+  color: #deaa86;
+  text-align: center;
 }
 
+/* searchbar {{{ */
 .navigation-search {
+  /* this is needed to tuck the button inside the */
+  /* search bar with absolute positioning */
     position: relative;
 }
 
 .navigation-search-input {
-    width: 30rem;
-    padding: 1rem 2rem;
-    background-color: rgba(0, 0, 0, 0.3);
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.6rem;
-    color: #deaa86;
-    letter-spacing: 0.1rem;
-    outline: none;
-    border: .1rem solid #555;
-    border-radius: 10rem;
-    transition: background-color .3s;
+  width: 30rem;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.7rem;
+  color: #deaa86;
+  letter-spacing: 0.1rem;
+
+  outline: none;
+  border: .1rem solid #555;
+  border-radius: 0.3rem;
+  transition: background-color .2s;
 }
 
 .navigation-search-input:focus {
-    background-color: rgba(0, 0, 0, 0.1); 
+  background-color: rgba(0, 0, 0, 0.1); 
 }
 
 .navigation-search-btn {
-    border: none;
-    background-color: transparent;
-    color: #deaa86;
-    font-size: 1.7rem;
-    cursor: pointer;
-    /* button is using position relative to .navigation-search */
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+  border: none;
+  background-color: transparent;
+  color: #deaa86;
+  font-size: 1.7rem;
+  cursor: pointer;
+  /* Tuck the search button inside the search bar */
+  /* button is using position relative to .navigation-search */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .navigation-search-btn:focus {
-    border: none;
+  border: none;
 }
+/* }}} */
 
+/* Nav Links {{{ */
 .navigation-item {
+  /* needed for positioning of .navigation-link decorations */
   position: relative;
 }
 .navigation-list {
@@ -157,6 +192,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .navigation-link {
   color: #fff;
   font-size: 1.6rem;
@@ -167,15 +203,17 @@ body {
   transition: color .5s;
 }
 
+/* nav link decorations {{{ */
 .navigation-link::before {
   content: "";
   width: 0rem;
   height: 0.1rem;
   background-color: #deaa86;
+  /* position is relative to .navigation-item */
   position: absolute;
   top: 1rem;
   left: -4rem;
-  transition: width .5s cubic-bezier(1,0,0,1);
+  transition: width .3s cubic-bezier(1,0,0,1);
 }
 .navigation-link::after {
   content: "";
@@ -185,21 +223,24 @@ body {
   position: absolute;
   top: 1rem;
   right: -4rem;
-  transition: width .5s cubic-bezier(1,0,0,1);
+  transition: width .3s cubic-bezier(1,0,0,1);
 }
-.bavigation-link:hover {
+.navigation-link:hover {
   color: #deaa86;
 }
-
 .navigation-link:hover::before,
 .navigation-link:hover::after {
   width: 3rem;
 }
+/* }}} */
+
+/* end of Nav Links }}} */
 
 .copyright {
   color: #fff;
   font-size:1.2rem;
   margin-bottom: 1.5rem;
 }
-/* end of navigation */
+
+/* end of navigation }}} */
 /* end of navbar */
