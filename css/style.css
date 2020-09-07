@@ -92,7 +92,7 @@ body {
 }
 /* end of sidebar }}} */
 
-/* navigation {{{ */
+/* Navigation {{{ */
 .navigation {
   position: fixed;
   left: -32rem;
@@ -243,4 +243,10 @@ body {
 }
 
 /* end of navigation }}} */
-/* end of navbar */
+/* end of Navigation }}} */
+
+/* header {{{ */
+.header {
+  margin-left: 8rem;
+}
+/* end of header }}} */
