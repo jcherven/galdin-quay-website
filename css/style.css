@@ -27,7 +27,7 @@ body {
   z-index: 10;
 }
 
-/* Custom menu button icon {{{ */ 
+/* Custom menu button icon {{{ */
 .menu-icon {
   margin-top: 3rem;
   cursor: pointer;
@@ -113,21 +113,21 @@ body {
   align-items: center;
 
   /* animation for show/hide nav menu on click*/
-  transition: left 0.4s cubic-bezier(1,0,0,1);
+  transition: left 0.4s cubic-bezier(1, 0, 0, 1);
 }
 
 /* Click handler for the main nav {{{ */
 /* The tilde css combinator is the general sibling selector. */
 /* It should select all sibling elements */
 .checkbox:checked ~ .navigation {
-  left: 8rem; 
+  left: 8rem;
 }
 
 .navigation-heading {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 3.5rem;
   font-weight: 300;
-  letter-spacing:0.2rem;
+  letter-spacing: 0.2rem;
   color: #deaa86;
   text-align: center;
 }
@@ -136,7 +136,7 @@ body {
 .navigation-search {
   /* this is needed to tuck the button inside the */
   /* search bar with absolute positioning */
-    position: relative;
+  position: relative;
 }
 
 .navigation-search-input {
@@ -144,19 +144,19 @@ body {
   padding: 1rem 2rem;
   background-color: rgba(0, 0, 0, 0.3);
 
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 1.7rem;
   color: #deaa86;
   letter-spacing: 0.1rem;
 
   outline: none;
-  border: .1rem solid #555;
+  border: 0.1rem solid #555;
   border-radius: 0.3rem;
-  transition: background-color .2s;
+  transition: background-color 0.2s;
 }
 
 .navigation-search-input:focus {
-  background-color: rgba(0, 0, 0, 0.1); 
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .navigation-search-btn {
@@ -200,7 +200,7 @@ body {
   letter-spacing: 0.1rem;
   text-decoration: none;
   text-transform: uppercase;
-  transition: color .5s;
+  transition: color 0.5s;
 }
 
 /* nav link decorations {{{ */
@@ -213,7 +213,7 @@ body {
   position: absolute;
   top: 1rem;
   left: -4rem;
-  transition: width .3s cubic-bezier(1,0,0,1);
+  transition: width 0.3s cubic-bezier(1, 0, 0, 1);
 }
 .navigation-link::after {
   content: "";
@@ -223,7 +223,7 @@ body {
   position: absolute;
   top: 1rem;
   right: -4rem;
-  transition: width .3s cubic-bezier(1,0,0,1);
+  transition: width 0.3s cubic-bezier(1, 0, 0, 1);
 }
 .navigation-link:hover {
   color: #deaa86;
@@ -238,7 +238,7 @@ body {
 
 .copyright {
   color: #fff;
-  font-size:1.2rem;
+  font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
 
@@ -248,5 +248,86 @@ body {
 /* header {{{ */
 .header {
   margin-left: 8rem;
+  height: 100vh;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.5)
+    ),
+    url(../img/header-1.jpeg) center;
+  background-size: cover;
+}
+
+.brand {
+  display: flex;
+  cursor: pointer;
+}
+
+.hotel-heading {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2.7rem;
+  font-weight: 400;
+  color: #deaa86;
+  letter-spacing: 0.2rem;
+}
+
+.banner {
+  color: #ddd;
+  height: 65rem;
+  /* flexbox container */
+  display: flex;
+  flex-direction: column;
+  /* centers horizontally (cross axis) */
+  align-items: center;
+  /* centers vertically (main axis) */
+  justify-content: center;
+}
+
+.banner-heading {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 7rem;
+  font-weight: 400;
+  /* This zeroes out the default margin of the h1 */
+  margin-bottom: 0;
+  animation: anim 2s;
+}
+
+.banner-paragraph {
+  font-size: 3rem;
+  font-weight: 300;
+  /* the value 'backwards' fixes the animation delay */
+  animation: anim 1.5s .5s backwards;
+}
+
+.banner-button {
+  width: 21rem;
+  padding: 1.2rem 2rem;
+  font-size: 2rem;
+  color: #333;
+  letter-spacing: 0.1rem;
+  border: none;
+  border-radius: 0.3rem;
+  outline: none;
+  background: linear-gradient(to right, gold, goldenrod);
+  cursor: pointer;
+  animation: anim 1s 1s backwards;
+}
+
+.banner-button:hover {
+  background: linear-gradient(to left, gold, goldenrod);
+}
+
+.banner-button:active {
+  transform: translateY(0.2rem);
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 /* end of header }}} */
