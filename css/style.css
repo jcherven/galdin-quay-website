@@ -562,4 +562,62 @@ body {
 }
 /* end of rooms }}} */
 
+/* customers {{{ */
+.customers {
+  margin-left: 8rem;
+  padding-bottom: 7rem;
+  background-color: #15141b;
+}
 
+.customers-paragraph {
+  font-size: 1.8rem;
+  color: #ddd;
+  width: 50%;
+  margin: 2rem auto 0 auto;
+  text-align: center;
+}
+
+.customers-card-wrapper {
+  /* flexbox container for both cards */
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.customer-card {
+  background-color: #eee;
+  width: 60rem;
+  /* flexbox container to line up elements side by side */
+  display: flex;
+}
+
+.customer-image-wrapper {
+  /* vertically centers image */
+  margin: auto 0;
+}
+
+.customer-image {
+  width: 20rem;
+  /* puts the image slightly outside the card */
+  margin-left: -1.3rem;
+}
+
+.customer-info {
+  padding: 0 2rem;
+}
+
+.customer-fullname {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.customer-paragraph-1 {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #b85b1c;
+}
+.customer-paragraph-2 {
+  font-size: 1.3rem;
+  font-style: italic;
+}
+/* end of customers }}} */
